@@ -1,8 +1,12 @@
 # Token Radar — token-radar-01
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/zziayindu/token-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard)
+[![reward](https://make.fun/badge/token-radar-01/zziayindu/token-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01)
+
 A web dashboard that ranks protocols which record no token yet by what their
-launch would be worth, each with a farm plan. Built for the make.fun bounty
-`token-radar-01`.
+launch would be worth, each with a farm plan. Built for the [make.fun bounty
+`token-radar-01`](https://make.fun/bounty/token-radar-01).
 
 ## What it does
 
