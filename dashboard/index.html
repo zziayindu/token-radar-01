@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <h1>Token Radar</h1>
+      <p class="sub">Protocols that record no token yet, ranked by what their launch would be worth.</p>
+    </div>
+    <dl class="stats" id="stats"></dl>
+  </div>
+  <p class="asof" id="asof"></p>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="board" class="tab on" aria-current="page">Board</button>
+  <button type="button" data-view="live" class="tab">Live market</button>
+  <button type="button" data-view="method" class="tab">Method</button>
+</nav>
+
+<section id="view-board" class="view on" aria-label="Ranked board">
+  <div class="controls">
+    <label>Search <input id="q" type="search" placeholder="name or slug" autocomplete="off"></label>
+    <label>Category
+      <select id="cat"><option value="">All categories</option></select>
+    </label>
+    <label class="check"><input id="wl" type="checkbox"> Watchlist only</label>
+    <label>Sort by
+      <select id="sort">
+        <option value="rank">Rank (implied value)</option>
+        <option value="implied">Implied value, high to low</option>
+        <option value="tvl">TVL, high to low</option>
+        <option value="growth">7-day change, high to low</option>
+        <option value="age">Age, oldest first</option>
+        <option value="name">Name, A to Z</option>
+        <option value="category">Category, A to Z</option>
+        <option value="chains">Chains, A to Z</option>
+      </select>
+    </label>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="table-wrap">
+    <table id="board">
+      <thead>
+        <tr>
+          <th data-k="rank">Rank</th>
+          <th data-k="name">Protocol</th>
+          <th data-k="category">Category</th>
+          <th data-k="chains">Chains</th>
+          <th data-k="tvl" class="num">TVL</th>
+          <th data-k="growth" class="num">7d</th>
+          <th data-k="implied" class="num">Implied value</th>
+          <th data-k="age" class="num">Age</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="hint">Click a row for its detail view and farm plan. “Records no token” means the snapshot's record carries no token — it is not proof that none exists.</p>
+</section>
+
+<section id="view-detail" class="view" aria-label="Protocol detail">
+  <div id="detail"></div>
+</section>
+
+<section id="view-live" class="view" aria-label="Live market">
+  <p class="lede">These protocols already trade. Their values are the market's own — market cap, not a model's implied value — and they are kept apart from the board on purpose.</p>
+  <div class="table-wrap">
+    <table id="live">
+      <thead>
+        <tr>
+          <th>Protocol</th>
+          <th>Category</th>
+          <th>Chains</th>
+          <th class="num">TVL</th>
+          <th class="num">Market cap</th>
+          <th class="num">mcap / TVL</th>
+          <th class="num">7d</th>
+        </tr>
+      </thead>
+      <tbody id="live-rows"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="view-method" class="view" aria-label="Method">
+  <h2>How the ranking is built</h2>
+  <div id="method"></div>
+</section>
+
+<footer>
+  <p>Data: a frozen snapshot of DefiLlama protocol records, fetched 2026-11-14. No network: every byte this page shows ships with it. Implied values are the model's claim, never a promise — a launch may be worth more, less, or nothing.</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
